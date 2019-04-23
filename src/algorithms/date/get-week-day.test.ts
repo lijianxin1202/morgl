@@ -1,4 +1,4 @@
-import getWeekDay from "./getWeekDay";
+import getWeekDay from "./get-week-day";
 
 test("get week day", () => {
   expect(getWeekDay(new Date(2019, 0, 1))).toBe(2);
