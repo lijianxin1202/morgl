@@ -20,15 +20,16 @@ function merge(arr1: Array<number>, arr2: Array<number>) {
 }
 
 export default function mergeSort(arr: Array<number>) {
-  let sortCount = 2;
-  while (arr.length / sortCount > 0.5) {
-    for (let i = 0; i < arr.length; i += sortCount) {
-      const left = arr.slice(i, i + sortCount / 2);
-      const right = arr.slice(i + sortCount / 2, i + sortCount);
+  let sortedCount = 1;
+  while (arr.length >= sortedCount) {
+    const groupCount = sortedCount * 2;
+    for (let i = 0; i < arr.length; i += groupCount) {
+      const left = arr.slice(i, i + sortedCount);
+      const right = arr.slice(i + sortedCount, i + groupCount);
       const sorted = merge(left, right);
-      arr.splice(i, sortCount, ...sorted);
+      arr.splice(i, groupCount, ...sorted);
     }
-    sortCount *= 2;
+    sortedCount *= 2;
   }
   return arr;
 }
