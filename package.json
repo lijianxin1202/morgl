@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.135",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "typescript": "^3.4.3"
   },
   "devDependencies": {
